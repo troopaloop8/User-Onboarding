@@ -13,53 +13,71 @@ const SignUpForm = ({ touched, errors, status }) => {
 
   return (
     <div>
-      <p>Placeholder</p>
-      <Form>
-        <label>
-          Name:
-          <Field type="text" name="name" placeholder="name" />
-          {touched.name && errors.name && (
-            <p className="errors">{errors.name}</p>
-          )}
-        </label>
-        <label>
-          Email:
-          <Field type="text" name="email" placeholder="email" />
-          {touched.email && errors.email && (
-            <p className="errors">{errors.email}</p>
-          )}
-        </label>
-        <label>
-          Password:
-          <Field type="password" name="password" placeholder="password" />
-          {touched.password && errors.password && (
-            <p className="errors">{errors.password}</p>
-          )}
-        </label>
-        <label>
-          Confirm Password:
-          <Field type="password" name="confirm" placeholder="password" />
-          {touched.confirm && errors.confirm && (
-            <p className="errors">{errors.confirm}</p>
-          )}
-        </label>
-        <label>
-          By clicking here, you accept our terms of service.
-          <Field type="checkbox" name="terms" />
-          {touched.checkbox && errors.checkbox && (
-            <p className="errors">{errors.checkbox}</p>
-          )}
-        </label>
-        <button>Submit</button>
-      </Form>
-      <div>
+      <h1>Member Sign Up</h1>
+      <div className="form-container">
+        <Form>
+          <div className="field-container">
+            <label>
+              Name:
+              <Field type="text" name="name" placeholder="name" />
+              {touched.name && errors.name && (
+                <p className="errors">{errors.name}</p>
+              )}
+            </label>
+          </div>
+
+          <div className="field-container">
+            <label>
+              Email:
+              <Field type="text" name="email" placeholder="email" />
+              {touched.email && errors.email && (
+                <p className="errors">{errors.email}</p>
+              )}
+            </label>
+          </div>
+
+          <div className="field-container">
+            <label>
+              Password:
+              <Field type="password" name="password" placeholder="password" />
+              {touched.password && errors.password && (
+                <p className="errors">{errors.password}</p>
+              )}
+            </label>
+          </div>
+
+          <div className="field-container">
+            <label>
+              Confirm Password:
+              <Field type="password" name="confirm" placeholder="password" />
+              {touched.confirm && errors.confirm && (
+                <p className="errors">{errors.confirm}</p>
+              )}
+            </label>
+          </div>
+
+          <div className="field-container">
+            <label>
+              By clicking here, you accept our terms of service.
+              <Field type="checkbox" name="terms" />
+              {touched.checkbox && errors.checkbox && (
+                <p className="errors">{errors.checkbox}</p>
+              )}
+            </label>
+          </div>
+
+          <button>Submit</button>
+        </Form>
+      </div>
+
+      <div className="name-container">
         {user.map(
           user =>
             user.name &&
             user.email && (
-              <div>
-                <h2>{user.name}</h2>
-                <p>{user.email}</p>
+              <div className="name-card">
+                <h2 className="name-title">{user.name}</h2>
+                <p className="email-display">{user.email}</p>
               </div>
             )
         )}
